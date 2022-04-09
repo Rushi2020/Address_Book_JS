@@ -154,24 +154,29 @@ function deleteContact(firstName, lastName) {
     }
 }
 
+function countContacts(contactArray){
+    let count= contactArray.reduce((a, b) => a.concat(b), []).length;
+    console.log("Number of contacts is: "+count);
+ }
+
 try {
-    addressBookArray.push(new Contact("Pratham", "Tibile", "India", "pune", "mah", 577044, "91 6666543210", "pratham@gmail.com"));
+    addressBookArray.push(new Contact("Prashant", "Gokhale", "Plm", "Deva", "Karnataka", 577004, "91 7776543310", "Prashant@gmail.com"));
 } catch (e) {
     console.error(e);
 }
 
 try {
-    addressBookArray.push(new Contact("Rushi", "Patil", "XYZ", "UP", 234567,  8329778818, "abc@gmail.com"));
-}
- catch (e) {
+    addressBookArray.push(new Contact("Rushi", "Patil", "kop", "mah", 416008,  8569784589, "abc@gmail.com"));
+} catch (e) {
     console.log(e);
 }
 console.log(addressBookArray);
 console.log("\nAfter Editing Contact")
-editContact("Pratham", "Tibile", "city", "Pune");
-editContact("Pratham", "Tibile", "state", "mah");
-editContact("pratham", "Tibile", "address", "India");
+editContact("Prashant", "Gokhale", "city", "Deva");
+editContact("Prashant", "Gokhale", "state", "Karanataka");
+editContact("Prashant", "Gokhale", "address", "Plm");
 console.log(addressBookArray);
 
 deleteContact("Pratham", "Tibile");
 console.log(addressBookArray);
+countContacts(addressBookArray);
