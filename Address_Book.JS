@@ -159,24 +159,41 @@ function countContacts(contactArray){
     console.log("Number of contacts is: "+count);
  }
 
+ function addContact(addressBookArray,firstName,lastName){
+    if(addressBookArray.find((contact)=>(contact.firstName+" "+contact.lastName)==(firstName+" "+lastName))){   
+        console.log("Given contact already present in addressbook.");
+    }
+    else{
+        try{
+            addressBookArray.push(new Contact(firstName,lastName,'virat','Davangere','Karnataka',577004,'91 7561036987','virat@gmail.com'));
+            
+            console.log("Contact is added. ");
+        }catch(Exception){
+            console.log(Exception);
+        }
+        
+    }
+}
 try {
-    addressBookArray.push(new Contact("Prashant", "Gokhale", "Plm", "Deva", "Karnataka", 577004, "91 7776543310", "Prashant@gmail.com"));
+    addressBookArray.push(new Contact("Pratham", "Tibile", "India", "pune", "mah", 416008, "91 8956856948", "pratham@gmail.com"));
 } catch (e) {
     console.error(e);
 }
 
 try {
-    addressBookArray.push(new Contact("Rushi", "Patil", "kop", "mah", 416008,  8569784589, "abc@gmail.com"));
+    addressBookArray.push(new Contact("Rushi", "Patil", "XYZ", "UP", 234567,  9177685934, "abc@gmail.com"));
 } catch (e) {
     console.log(e);
 }
 console.log(addressBookArray);
 console.log("\nAfter Editing Contact")
-editContact("Prashant", "Gokhale", "city", "Deva");
-editContact("Prashant", "Gokhale", "state", "Karanataka");
-editContact("Prashant", "Gokhale", "address", "Plm");
+editContact("Pratham", "Tibile", "city", "pune");
+editContact("Pratham", "Tibile", "state", "mah");
+editContact("Pratham", "Tibile", "address", "India");
 console.log(addressBookArray);
 
 deleteContact("Pratham", "Tibile");
 console.log(addressBookArray);
 countContacts(addressBookArray);
+addContact(addressBookArray,"Prashant", "Gokhale");
+console.log(addressBookArray);
