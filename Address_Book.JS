@@ -115,13 +115,13 @@ class Contact {
 
 let addressBookArray = new Array();
 try {
-    addressBookArray.push(new Contact("Raghu", "Chavan", "", "Bangalore", "Karnataka", 560007, "91 7876543210", "raghu@gmail.com"));
+    addressBookArray.push(new Contact("Pratham", "Tibile", "", "Bangalore", "Karnataka", 560007, "91 7876543210", "raghu@gmail.com"));
 } catch (e) {
     console.error(e);
 }
 
 try {
-    addressBookArray.push(new Contact("Kaynat", "Zehra", "XYZ", "UP", 234567,"91 9177685934", "abc@gmail.com"));
+    addressBookArray.push(new Contact("Rushi", "Patil", "kop", "Mah", 416008,"91 9177685934", "abc@gmail.com"));
 } catch (e) {
     console.log(e);
 }
